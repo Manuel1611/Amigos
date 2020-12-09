@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Amigos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btInicio">Acceder</string>
+    <string name="tvAmigos">Amigos</string>
+    <string name="btImportar">Importar</string>
+    <string name="contImgContacto">Avatar</string>
+    <string name="btAñadirAmigo">Añadir amigo</string>
+    <string name="tvListaAmigos">Lista de amigos</string>
+    <string name="cont_btInsertar">Insertar</string>
+    <string name="cont_next">Siguiente</string>
+    <string name="cont_tel">Teléfono</string>
+    <string name="cont_nom">Nombre</string>
+    <string name="cont_nom2">Nombre:</string>
+    <string name="tvListaContactos">Tus contactos</string>
+    <string name="cont_atras">Atrás</string>
+    <string name="tvNuevoAmigo">Nuevo amigo</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_fechaNac">Nac. dd/mm/aaaa</string>
+    <string name="hint_fechaNac2">Nac. dd/mm/aaaa:</string>
+    <string name="fecha_no_especificada">No especificado</string>
+    <string name="cont_imagen">Imagen</string>
+    <string name="tvNacimiento">Nacimiento</string>
+    <string name="btEditar">Editar</string>
+    <string name="btBorrar">Borrar</string>
+    <string name="tvCuidado">¡Cuidado!</string>
+    <string name="tv_apuntodeborrar">Estás a punto de eliminar a un amigo. ¿Estás seguro?</string>
+    <string name="imgbt_cerrar">Cerrar</string>
+    <string name="cont_alerta">Alerta</string>
+    <string name="tvEditarAmigo">Editar amigo</string>
+</resources>

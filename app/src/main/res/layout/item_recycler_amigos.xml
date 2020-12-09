@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+
+    <View
+        android:id="@+id/viewAmigos"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/contenedor_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNombreAmigo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imgNextAmigo"
+        app:layout_constraintStart_toEndOf="@+id/imgNombreAmigo"
+        app:layout_constraintTop_toTopOf="@+id/imgNextAmigo" />
+
+    <TextView
+        android:id="@+id/tvTelefonoAmigo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imgNextAmigo"
+        app:layout_constraintEnd_toStartOf="@+id/imgNextAmigo"
+        app:layout_constraintStart_toEndOf="@+id/imgTelefonoAmigo"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreAmigo" />
+
+    <ImageView
+        android:id="@+id/imgNextAmigo"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/cont_next"
+        app:layout_constraintBottom_toBottomOf="@id/viewAmigos"
+        app:layout_constraintEnd_toEndOf="@id/viewAmigos"
+        app:layout_constraintTop_toTopOf="@id/viewAmigos"
+        app:srcCompat="@drawable/ic_next" />
+
+    <ImageView
+        android:id="@+id/imgTelefonoAmigo"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        android:contentDescription="@string/cont_tel"
+        app:layout_constraintStart_toStartOf="@id/viewAmigos"
+        app:layout_constraintTop_toTopOf="@+id/tvTelefonoAmigo"
+        app:srcCompat="@drawable/ic_phone" />
+
+    <ImageView
+        android:id="@+id/imgNombreAmigo"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/cont_nom"
+        app:layout_constraintStart_toStartOf="@id/viewAmigos"
+        app:layout_constraintTop_toTopOf="@+id/imgNextAmigo"
+        app:srcCompat="@drawable/ic_person" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

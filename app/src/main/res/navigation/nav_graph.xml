@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.amigos.view.fragment.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_from_inicio_to_main"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.amigos.view.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_from_main_to_contactos"
+            app:destination="@id/contactosFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+        <action
+            android:id="@+id/action_from_main_to_insertar"
+            app:destination="@id/insertarFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+        <action
+            android:id="@+id/action_from_main_to_ver"
+            app:destination="@id/verAmigoFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactosFragment"
+        android:name="com.example.amigos.view.fragment.ContactosFragment"
+        android:label="fragment_contactos"
+        tools:layout="@layout/fragment_contactos" >
+        <action
+            android:id="@+id/action_from_contactos_to_info"
+            app:destination="@id/infoContactoFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+        <action
+            android:id="@+id/action_from_contactos_to_main"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoContactoFragment"
+        android:name="com.example.amigos.view.fragment.InfoContactoFragment"
+        android:label="fragment_info_contacto"
+        tools:layout="@layout/fragment_info_contacto" >
+        <action
+            android:id="@+id/action_from_info_to_main"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+        <action
+            android:id="@+id/action_from_info_to_contactos"
+            app:destination="@id/contactosFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertarFragment"
+        android:name="com.example.amigos.view.fragment.InsertarFragment"
+        android:label="fragment_insertar"
+        tools:layout="@layout/fragment_insertar" >
+        <action
+            android:id="@+id/action_from_insertar_to_main"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/verAmigoFragment"
+        android:name="com.example.amigos.view.fragment.VerAmigoFragment"
+        android:label="fragment_ver_amigo"
+        tools:layout="@layout/fragment_ver_amigo" >
+        <action
+            android:id="@+id/action_from_ver_to_main"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+        <action
+            android:id="@+id/action_from_ver_to_editar"
+            app:destination="@id/editarFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarFragment"
+        android:name="com.example.amigos.view.fragment.EditarFragment"
+        android:label="fragment_editar"
+        tools:layout="@layout/fragment_editar" >
+        <action
+            android:id="@+id/action_from_editar_to_ver"
+            app:destination="@id/verAmigoFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+    </fragment>
+</navigation>
