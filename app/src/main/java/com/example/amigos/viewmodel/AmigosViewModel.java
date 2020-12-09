@@ -1,6 +1,7 @@
 package com.example.amigos.viewmodel;
 
 import android.app.Application;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -10,6 +11,7 @@ import com.example.amigos.model.Repository;
 import com.example.amigos.model.room.pojo.Amigos;
 import com.example.amigos.model.room.pojo.AmigosLlamadas;
 import com.example.amigos.model.room.pojo.Contacto;
+import com.example.amigos.view.adapter.ContactosRecyclerAdapter;
 
 import java.util.List;
 
@@ -72,6 +74,10 @@ public class AmigosViewModel extends AndroidViewModel {
 
     public void setAmigosLlamadas(AmigosLlamadas amigosLlamadas) {
         this.amigosLlamadas = amigosLlamadas;
+    }
+
+    public void getContactos(Context c, List<Contacto> listaContactos, ContactosRecyclerAdapter adapter) {
+        repository.getContactos(c, listaContactos, adapter);
     }
 
     public long getCont() {

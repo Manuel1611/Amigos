@@ -1,6 +1,8 @@
 package com.example.amigos.model;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.provider.ContactsContract;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
@@ -10,8 +12,10 @@ import com.example.amigos.model.room.dao.AmigosDao;
 import com.example.amigos.model.room.dao.LlamadasDao;
 import com.example.amigos.model.room.pojo.Amigos;
 import com.example.amigos.model.room.pojo.AmigosLlamadas;
+import com.example.amigos.model.room.pojo.Contacto;
 import com.example.amigos.model.room.pojo.Llamadas;
 import com.example.amigos.util.UtilThread;
+import com.example.amigos.view.adapter.ContactosRecyclerAdapter;
 
 import java.util.Calendar;
 import java.util.List;
@@ -101,6 +105,23 @@ public class Repository {
                 amigosDao.deleteId(id);
             }
         });
+    }
+
+    public void getContactos(Context c, List<Contacto> listaContactos, ContactosRecyclerAdapter adapter) {
+
+        Cursor cursor = c.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+
+        while (cursor.moveToNext()) {
+            String nombre = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+            String telefono = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+            String imagen = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.PHOTO_URI));
+
+            Contacto contacto = new Contacto(nombre, telefono, imagen);
+
+            listaContactos.add(contacto);
+            adapter.notifyDataSetChanged();
+        }
+
     }
 
 }

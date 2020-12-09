@@ -76,20 +76,7 @@ public class ContactosFragment extends Fragment {
     }
 
     private void getContactos() {
-
-        Cursor cursor = getContext().getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
-
-        while (cursor.moveToNext()) {
-            String nombre = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-            String telefono = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-            String imagen = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.PHOTO_URI));
-
-            Contacto contacto = new Contacto(nombre, telefono, imagen);
-
-            listaContactos.add(contacto);
-            adapter.notifyDataSetChanged();
-        }
-
+        amigosViewModel.getContactos(getContext(), listaContactos, adapter);
     }
 
 }
